@@ -1,0 +1,806 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #9d0832;
+    padding-bottom: 75px;
+}
+
+/* == ESTILOS CABECERA == */
+header {
+    background-color: #0062c0;
+    color: #ecf0f1;
+    padding: 10px 0;
+    margin: 0;
+    margin-bottom: 7px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav div {
+    display: flex;
+    align-items: center;
+}
+
+header nav div a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+header nav div a:hover {
+    color: #ffa51e;
+}
+
+header nav span {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav img {
+    height: 40px;
+    width: auto;
+}
+
+header nav div:last-child a {
+    font-weight: bold;
+    margin-left: auto;
+}
+
+header nav div:last-child div {
+    display: none;
+    position: absolute;
+    background-color: #2c3e50;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav div:last-child:hover div {
+    display: flex;
+    flex-direction: column;
+}
+
+header nav div:last-child div a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header nav div:last-child div a:hover {
+    background-color: #34495e;
+}
+
+/* == ESTILOS DEL PIE DE PÁGINA == */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer div {
+    margin-bottom: 5px;
+}
+
+footer span {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/*== ESTILOS DE LA PÁGINA PRINCIPAL ==*/
+.welcome {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.welcome img {
+    height: 400px;
+    width: auto;
+    border-radius: 15%;
+    padding: 5px;
+}
+
+.welcome-text {
+    margin-top: 10px;
+    width: fit-content;
+    padding: 7px;
+    background-color: rgb(226, 226, 226);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*== ESTILOS DEL FORMULARIO DE CREACIÓN DE CUENTA*/
+.title-signup {
+    margin-bottom: 15px;
+}
+
+.form-signup {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-signup label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-signup input,
+.form-signup select {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-signup input[type="submit"] {
+    background-color: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-signup input[type="submit"]:hover {
+    background-color: #353535;
+}
+
+.signup-error {
+    background-color: #ffdddd;
+    color: #8b0000;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #8b0000;
+    border-radius: 4px;
+}
+
+/*== ESTILOS DEL FORMULARIO DE INICIO DE SESIÓN*/
+.title-login {
+    margin-bottom: 15px;
+}
+
+.form-login {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-login label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-login input,
+.form-login select {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-login input[type="submit"] {
+    background-color: #1a1a1a;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-login input[type="submit"]:hover {
+    background-color: #353535;
+}
+
+.login-error {
+    background-color: #ffdddd;
+    color: #8b0000;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #8b0000;
+    border-radius: 4px;
+}
+
+/*== ESTILOS CUENTA DE USUARIO ==*/
+.user-data {
+    margin-top: 20px;
+}
+
+.user-data div {
+    margin-bottom: 10px;
+}
+
+.user-error {
+    margin-top: 20px;
+    color: #d9534f;
+}
+
+.user-edit a {
+    color: #337ab7;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: #5bc0de;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.user-edit a:hover {
+    background-color: #46b8da;
+}
+
+/*== ESTILOS MENSAJES*/
+.messages-container {
+    margin: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.messages-title h1 {
+    color: #333;
+}
+
+.messages-list {
+    margin-top: 20px;
+}
+
+.message-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.message-item {
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: filter 0.3s ease;
+}
+
+.message-item:hover {
+    filter: brightness(0.95);
+}
+
+.message-unread {
+    background-color: #e9e7e7;
+}
+
+.message-unread:hover {
+    filter: brightness(0.95);
+}
+
+.message-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.message-sender {
+    color: #666;
+    margin: 5px 0;
+}
+
+.message-date {
+    color: #999;
+}
+
+.message-null {
+    color: #999;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-message {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-message h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-message form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-message input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-message input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-message input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/*== ESTILOS JUGADORES ==*/
+
+.form-player {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-player h2 {
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.form-player label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-player input[type="text"],
+.form-player textarea {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-player textarea {
+    resize: vertical;
+}
+
+.form-player input[type="checkbox"] {
+    margin-bottom: 12px;
+}
+
+.form-player input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-player input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.form-player-error {
+    color: #ff0000;
+}
+
+.players {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.players h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.players-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.player-data {
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.player-data img {
+    width: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.player-data a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.players-null {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.player-form-visible form {
+    background-color: beige;
+    width: fit-content;
+    padding: 5px;
+    margin: 5px 5px;
+}
+
+.player-info, .message-information {
+    background-color: wheat;
+    width: fit-content;
+    margin: 8px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.player-info img {
+    height: 200px;
+    width: auto;
+}
+
+/*== ESTILOS PRODUCTOS*/
+
+.products {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.products h1 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    color: #3498db;
+    margin-top: 8px;
+}
+
+.product-stock {
+    color: #27ae60;
+    margin-top: 8px;
+}
+
+.products-empty {
+    color: #999;
+    margin-top: 20px;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*== ESTILOS EVENTOS */
+.form-event {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-event h2 {
+    margin-bottom: 10px;
+}
+
+.form-event label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-event input[type="text"],
+.form-event input[type="date"],
+.form-event input[type="time"],
+.form-event select,
+.form-event textarea {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-event textarea {
+    resize: vertical;
+}
+
+.form-event input[type="checkbox"] {
+    margin-bottom: 12px;
+}
+
+.form-event input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-event input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.form-event-error {
+    color: #ff0000;
+    font-size: 14px;
+}
+
+#desc,
+#tags {
+    height: 100px;
+    margin-top: 0;
+}
+
+#date,
+#hour {
+    margin-bottom: 12px;
+}
+
+.form-event input[type="submit"] {
+    margin-top: 12px;
+}
+
+.form-event input[type="checkbox"] {
+    margin-bottom: 12px;
+}
+
+/*Lista de Eventos*/
+
+.events-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.events-header h1 {
+    color: #f8e910;
+}
+
+.events-list {
+    margin-top: 20px;
+}
+
+.event-item {
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(187, 121, 0);
+    transition: transform 0.3s ease;
+}
+
+.event-item:hover {
+    transform: scale(1.075);
+}
+
+.event-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.event-title:hover {
+    text-decoration: underline;
+}
+
+.event-description {
+    margin-top: 10px;
+    color: #07267a;
+    text-overflow: ellipsis;
+    width: 370px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.event-details {
+    margin-top: 10px;
+    color: rgb(146, 216, 41);
+}
+
+.event-data {
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.event-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.event-like {
+    display: inline-block;
+    padding: 5px 2px;
+    color: rgb(126, 222, 89);
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+    background-color: transparent;
+    border: none;
+}
+
+.event-like button {
+    color: rgb(126, 222, 89);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.event-like:hover {
+    transform: translateY(-5px);
+}
+
+
+.event-admin {
+    display: flex;
+}
+
+.event-edit,
+.event-delete button {
+    padding: 5px 8.25px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.event-edit {
+    color: #ffc107;
+}
+
+.event-edit:hover {
+    transform: translateY(-5px);
+}
+
+.event-delete button {
+    background-color: transparent;
+    color: rgb(255, 50, 50);
+    border: none;
+    cursor: pointer;
+}
+
+.event-delete button:hover {
+    transform: translateY(-5px);
+}
+
+.event-null {
+    margin-top: 20px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.event-data {
+    padding-right: 10px;
+}
+
+/*== ESTILOS DE LUGAR ==*/
+
+.stadium {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 10px;
+    width: fit-content;
+}
+
+.stadium iframe {
+    border: 0;
+    border-radius: 10px;
+}
+
+.stadium:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-policy, .cookie-settings, .privacy, .terms {
+    width: fit-content;
+    color: beige;
+    margin: 10px;
+    padding: 5px;
+}
